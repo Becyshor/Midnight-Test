@@ -13,11 +13,8 @@ public class ThirdPersonShooterController : MonoBehaviour
     [SerializeField] private float normalSensitivity;
     [SerializeField] private float aimSensitivity;
 
-    [SerializeField] private Transform debugTransform;
-    [SerializeField] private Transform bulletPrefab;
-    [SerializeField] private Transform spawnBulletPosition;
-    [SerializeField] private Transform vfxHitGreen;
-    [SerializeField] private Transform vfxHitRed;
+    //[SerializeField] private Transform bulletPrefab;
+    //[SerializeField] private Transform spawnBulletPosition;
 
     private StarterAssetsInputs starterAssetsInputs;
     private ThirdPersonController thirdPersonController;
@@ -33,7 +30,7 @@ public class ThirdPersonShooterController : MonoBehaviour
     void Update()
     {
         Vector3 mouseWorldPosition = Vector3.zero;
-
+        
         Vector2 screenCenterPoint = new(Screen.width / 2f, Screen.height / 2f);
         Ray ray = Camera.main.ScreenPointToRay(screenCenterPoint);
 
@@ -41,9 +38,12 @@ public class ThirdPersonShooterController : MonoBehaviour
 
         if (Physics.Raycast(ray, out RaycastHit raycastHit, 999f, aimColliderLayerMask))
         {
-            debugTransform.position = raycastHit.point;
             mouseWorldPosition = raycastHit.point;
             hitTransform = raycastHit.transform;
+        }
+        else
+        {
+            return;
         }
 
         if (starterAssetsInputs.aim)
@@ -65,13 +65,16 @@ public class ThirdPersonShooterController : MonoBehaviour
             thirdPersonController.SetRotateOnMove(true);
         }
 
-        if (starterAssetsInputs.shoot)
+        /*if (starterAssetsInputs.shoot)
         {
             if (hitTransform != null)
             {
-                if (hitTransform.GetComponent<BulletTarget>() != null)
+                EnemyHealth target = hitTransform.GetComponent<EnemyHealth>();
+
+                if (target != null)
                 {
-                    //hit target
+                    
+                    target.TakeDamage(weaponDamage);
                     Instantiate(vfxHitGreen, mouseWorldPosition, Quaternion.identity);
                 }
                 else
@@ -83,7 +86,6 @@ public class ThirdPersonShooterController : MonoBehaviour
             //Vector3 aimDir = (mouseWorldPosition - spawnBulletPosition.position).normalized;
             //Instantiate(bulletPrefab, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
             starterAssetsInputs.shoot = false;
-        }
-
+        }*/
     }
 }

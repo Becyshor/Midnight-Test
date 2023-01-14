@@ -5,13 +5,13 @@ using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
 {
-    [SerializeField] Transform target;
-    [SerializeField] float chaseRange = 5f;
+    [SerializeField] private Transform target;
+    [SerializeField] private float chaseRange = 5f;
 
-    NavMeshAgent navMeshAgent;
+    private NavMeshAgent navMeshAgent;
 
-    float targetDistance = Mathf.Infinity;
-    bool isProvoked = false;
+    private float targetDistance = Mathf.Infinity;
+    private bool isProvoked = false;
 
     void Start()
     {

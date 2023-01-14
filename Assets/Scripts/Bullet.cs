@@ -23,7 +23,7 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<BulletTarget>() != null)
+        if (other.GetComponent<EnemyHealth>() != null)
         {
             //hit target
             Instantiate(vfxHitGreen, transform.position, Quaternion.identity);
