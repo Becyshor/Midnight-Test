@@ -12,6 +12,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] private Transform spawnBulletPosition;
     [SerializeField] private Transform vfxHitGreen;
     [SerializeField] private Transform vfxHitRed;
+    [SerializeField] private ParticleSystem vfxGun;
 
     private StarterAssetsInputs starterAssetsInputs;
 
@@ -23,22 +24,31 @@ public class Weapon : MonoBehaviour
 
     void Update()
     {
-        ProcessShooting();
+        if (starterAssetsInputs.shoot)
+            Shoot();
     }
 
-    private void ProcessShooting()
+    private void Shoot()
     {
-        Vector3 mouseWorldPosition = Vector3.zero;
+        PlayGunEffect();
+        ProcessRaycast();
+    }
 
+    private void PlayGunEffect()
+    {
+        vfxGun.Play();
+    }
+
+    private void ProcessRaycast()
+    {
         Vector2 screenCenterPoint = new(Screen.width / 2f, Screen.height / 2f);
         Ray ray = Camera.main.ScreenPointToRay(screenCenterPoint);
 
-        if (starterAssetsInputs.shoot)
-        {
+        //if (starterAssetsInputs.shoot)
+        //{
             Transform hitTransform = null;
             if (Physics.Raycast(ray, out RaycastHit hit, range))
             {
-                mouseWorldPosition = hit.point;
                 hitTransform = hit.transform;
                 if (hitTransform != null)
                 {
@@ -47,17 +57,18 @@ public class Weapon : MonoBehaviour
                     {
                         Debug.Log("Hitt " + hit.transform.name);
                         target.TakeDamage(damage);
-                        Instantiate(vfxHitGreen, mouseWorldPosition, Quaternion.identity);
+                        Instantiate(vfxHitGreen, hit.point, Quaternion.identity);
                     }
                     else
                     {
-                        Instantiate(vfxHitRed, mouseWorldPosition, Quaternion.identity);
+                        Instantiate(vfxHitRed, hit.point, Quaternion.identity);
                     }
                 }
             }
             else return;
 
             starterAssetsInputs.shoot = false;
-        }
+        //}
     }
+
 }
