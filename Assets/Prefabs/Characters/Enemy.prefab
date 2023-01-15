@@ -43,6 +43,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Zombie1
       objectReference: {fileID: 0}
+    - target: {fileID: 857777767548654076, guid: eae21c69a47a8e34f8b6552b82d11d6c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.029767761
+      objectReference: {fileID: 0}
+    - target: {fileID: 857777767548654076, guid: eae21c69a47a8e34f8b6552b82d11d6c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.08611505
+      objectReference: {fileID: 0}
     - target: {fileID: 1380051232777853125, guid: eae21c69a47a8e34f8b6552b82d11d6c,
         type: 3}
       propertyPath: target

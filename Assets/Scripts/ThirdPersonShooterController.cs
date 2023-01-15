@@ -67,22 +67,6 @@ public class ThirdPersonShooterController : MonoBehaviour
 
         /*if (starterAssetsInputs.shoot)
         {
-            if (hitTransform != null)
-            {
-                EnemyHealth target = hitTransform.GetComponent<EnemyHealth>();
-
-                if (target != null)
-                {
-                    
-                    target.TakeDamage(weaponDamage);
-                    Instantiate(vfxHitGreen, mouseWorldPosition, Quaternion.identity);
-                }
-                else
-                {
-                    //hit else
-                    Instantiate(vfxHitRed, mouseWorldPosition, Quaternion.identity);
-                }
-            }
             //Vector3 aimDir = (mouseWorldPosition - spawnBulletPosition.position).normalized;
             //Instantiate(bulletPrefab, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
             starterAssetsInputs.shoot = false;

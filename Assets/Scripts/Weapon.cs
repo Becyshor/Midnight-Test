@@ -57,11 +57,11 @@ public class Weapon : MonoBehaviour
                     {
                         Debug.Log("Hitt " + hit.transform.name);
                         target.TakeDamage(damage);
-                        Instantiate(vfxHitGreen, hit.point, Quaternion.identity);
+                        Instantiate(vfxHitRed, hit.point, Quaternion.identity);
                     }
                     else
                     {
-                        Instantiate(vfxHitRed, hit.point, Quaternion.identity);
+                        Instantiate(vfxHitGreen, hit.point, Quaternion.identity);
                     }
                 }
             }
