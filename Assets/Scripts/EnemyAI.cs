@@ -10,6 +10,8 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private float turnSpeed = 5f;
 
     private NavMeshAgent navMeshAgent;
+    private EnemyHealth health;
+    private CapsuleCollider capsuleCollider;
     private Animator animator;
 
     private float targetDistance = Mathf.Infinity;
@@ -18,11 +20,21 @@ public class EnemyAI : MonoBehaviour
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
+        health = GetComponent<EnemyHealth>();
+        capsuleCollider = GetComponent<CapsuleCollider>();
         animator = GetComponent<Animator>();
     }
 
     void Update()
     {
+        if (health.IsDead())
+        {
+            enabled = false;
+            navMeshAgent.enabled = false;
+            capsuleCollider.enabled = false;
+            return;
+        }
+
         targetDistance = Vector3.Distance(target.position, transform.position);
 
         if (isProvoked)
