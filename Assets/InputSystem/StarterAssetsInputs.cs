@@ -14,6 +14,9 @@ namespace StarterAssets
 		public bool sprint;
 		public bool aim;
 		public bool shoot;
+		public bool weaponSwitch1;
+		public bool weaponSwitch2;
+		public bool weaponSwitch3;
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -55,6 +58,21 @@ namespace StarterAssets
 		{
 			ShootInput(value.isPressed);
 		}
+
+		public void OnWeaponSwitch1(InputValue value)
+		{
+			WeaponSwitch1Input(value.isPressed);
+		}
+
+		public void OnWeaponSwitch2(InputValue value)
+		{
+			WeaponSwitch2Input(value.isPressed);
+		}
+
+		public void OnWeaponSwitch3(InputValue value)
+		{
+			WeaponSwitch3Input(value.isPressed);
+		}
 #endif
 
 
@@ -86,6 +104,21 @@ namespace StarterAssets
 		public void ShootInput(bool newShootState)
 		{
 			shoot = newShootState;
+		}
+
+		public void WeaponSwitch1Input(bool newWeaponSwitch1State)
+		{
+			weaponSwitch1 = newWeaponSwitch1State;
+		}
+
+		public void WeaponSwitch2Input(bool newWeaponSwitch2State)
+		{
+			weaponSwitch2 = newWeaponSwitch2State;
+		}
+
+		public void WeaponSwitch3Input(bool newWeaponSwitch3State)
+		{
+			weaponSwitch3 = newWeaponSwitch3State;
 		}
 
 		private void OnApplicationFocus(bool hasFocus)

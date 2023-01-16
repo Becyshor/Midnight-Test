@@ -9,10 +9,11 @@ public class Weapon : MonoBehaviour
     [SerializeField] private float damage = 20f;
 
     [SerializeField] private Camera shootingCamera;
-    [SerializeField] private Transform spawnBulletPosition;
     [SerializeField] private Transform vfxHitGreen;
     [SerializeField] private Transform vfxHitRed;
     [SerializeField] private ParticleSystem vfxGun;
+    [SerializeField] private Ammo ammoSlot;
+    [SerializeField] private AmmoType ammoType;
 
     private StarterAssetsInputs starterAssetsInputs;
 
@@ -30,8 +31,12 @@ public class Weapon : MonoBehaviour
 
     private void Shoot()
     {
-        PlayGunEffect();
-        ProcessRaycast();
+        if (ammoSlot.GetCurrentAmmo(ammoType) > 0)
+        {
+            PlayGunEffect();
+            ProcessRaycast();
+            ammoSlot.ReduceAmmoAmount(ammoType);
+        }
     }
 
     private void PlayGunEffect()
