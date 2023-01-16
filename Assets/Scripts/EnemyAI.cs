@@ -5,22 +5,23 @@ using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
 {
-    [SerializeField] private Transform target;
     [SerializeField] private float chaseRange = 5f;
-    [SerializeField] private float turnSpeed = 5f;
 
     private NavMeshAgent navMeshAgent;
     private EnemyHealth health;
     private CapsuleCollider capsuleCollider;
     private Animator animator;
+    private Transform target;
 
     private float targetDistance = Mathf.Infinity;
+    private float turnSpeed = 5f;
     private bool isProvoked = false;
 
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
         health = GetComponent<EnemyHealth>();
+        target = FindObjectOfType<PlayerHealth>().transform;
         capsuleCollider = GetComponent<CapsuleCollider>();
         animator = GetComponent<Animator>();
     }

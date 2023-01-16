@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using StarterAssets;
+using TMPro;
 
 public class Weapon : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] private ParticleSystem vfxGun;
     [SerializeField] private Ammo ammoSlot;
     [SerializeField] private AmmoType ammoType;
+    [SerializeField] private TextMeshProUGUI ammoText;
 
     private StarterAssetsInputs starterAssetsInputs;
 
@@ -25,8 +27,15 @@ public class Weapon : MonoBehaviour
 
     void Update()
     {
+        DisplayAmmo();
         if (starterAssetsInputs.shoot)
             Shoot();
+    }
+
+    private void DisplayAmmo()
+    {
+        int currentAmmo = ammoSlot.GetCurrentAmmo(ammoType);
+        ammoText.text = currentAmmo.ToString();
     }
 
     private void Shoot()

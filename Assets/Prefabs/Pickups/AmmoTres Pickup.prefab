@@ -17,6 +17,11 @@ PrefabInstance:
       propertyPath: ammoAmount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2451653067644507236, guid: 6fd6f6ddad0f6d64d8c503a1909d9cb3,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 4104305578361745351, guid: 6fd6f6ddad0f6d64d8c503a1909d9cb3,
         type: 3}
       propertyPath: m_RootOrder
@@ -79,3 +84,98 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fd6f6ddad0f6d64d8c503a1909d9cb3, type: 3}
+--- !u!4 &3581465630339024012 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4104305578361745351, guid: 6fd6f6ddad0f6d64d8c503a1909d9cb3,
+    type: 3}
+  m_PrefabInstance: {fileID: 668362531383225163}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2113253313322040319
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 3581465630339024012}
+    m_Modifications:
+    - target: {fileID: 90539020313669864, guid: 571804c07bc37b9468e123458ac2c61e,
+        type: 3}
+      propertyPath: m_Name
+      value: AmmoTres
+      objectReference: {fileID: 0}
+    - target: {fileID: 93468101187020112, guid: 571804c07bc37b9468e123458ac2c61e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 93468101187020112, guid: 571804c07bc37b9468e123458ac2c61e,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 93468101187020112, guid: 571804c07bc37b9468e123458ac2c61e,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 93468101187020112, guid: 571804c07bc37b9468e123458ac2c61e,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 93468101187020112, guid: 571804c07bc37b9468e123458ac2c61e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 93468101187020112, guid: 571804c07bc37b9468e123458ac2c61e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 93468101187020112, guid: 571804c07bc37b9468e123458ac2c61e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 93468101187020112, guid: 571804c07bc37b9468e123458ac2c61e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 93468101187020112, guid: 571804c07bc37b9468e123458ac2c61e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 93468101187020112, guid: 571804c07bc37b9468e123458ac2c61e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 93468101187020112, guid: 571804c07bc37b9468e123458ac2c61e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 93468101187020112, guid: 571804c07bc37b9468e123458ac2c61e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 93468101187020112, guid: 571804c07bc37b9468e123458ac2c61e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 93468101187020112, guid: 571804c07bc37b9468e123458ac2c61e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 93468101187020112, guid: 571804c07bc37b9468e123458ac2c61e,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 571804c07bc37b9468e123458ac2c61e, type: 3}
