@@ -95,12 +95,12 @@ public class EnemyAI : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, chaseRange);
     }
 
-    private void PlayZombieSound()
+    public void PlayZombieSound()
     {
         zombieSound.Play();
     }
     
-    private void StopZombieSound()
+    public void StopZombieSound()
     {
         zombieSound.Stop();
     }

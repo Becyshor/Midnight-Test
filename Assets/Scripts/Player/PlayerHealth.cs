@@ -24,6 +24,7 @@ public class PlayerHealth : MonoBehaviour
         if (hitPoints <= 0)
         {
             healthbar.UpdateHealthbar(100, hitPoints);
+
             BroadcastMessage("HandleDeath");
         }
     }
