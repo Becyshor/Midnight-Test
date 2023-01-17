@@ -10,19 +10,21 @@ public class Weapon : MonoBehaviour
     [SerializeField] private float damage = 20f;
 
     [SerializeField] private Camera shootingCamera;
-    [SerializeField] private Transform vfxHitGreen;
-    [SerializeField] private Transform vfxHitRed;
+    [SerializeField] private Transform vfxHitOther;
+    [SerializeField] private Transform vfxHitTarget;
     [SerializeField] private ParticleSystem vfxGun;
     [SerializeField] private Ammo ammoSlot;
     [SerializeField] private AmmoType ammoType;
     [SerializeField] private TextMeshProUGUI ammoText;
 
+    private AudioSource shotSound;
     private StarterAssetsInputs starterAssetsInputs;
 
 
     void Start()
     {
         starterAssetsInputs = GetComponentInParent<StarterAssetsInputs>();
+        shotSound = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -43,6 +45,7 @@ public class Weapon : MonoBehaviour
         if (ammoSlot.GetCurrentAmmo(ammoType) > 0)
         {
             PlayGunEffect();
+            PlayGunSound();
             ProcessRaycast();
             ammoSlot.ReduceAmmoAmount(ammoType);
         }
@@ -51,6 +54,11 @@ public class Weapon : MonoBehaviour
     private void PlayGunEffect()
     {
         vfxGun.Play();
+    }
+
+    private void PlayGunSound()
+    {
+        shotSound.Play();
     }
 
     private void ProcessRaycast()
@@ -71,11 +79,11 @@ public class Weapon : MonoBehaviour
                     {
                         Debug.Log("Hitt " + hit.transform.name);
                         target.TakeDamage(damage);
-                        Instantiate(vfxHitRed, hit.point, Quaternion.identity);
+                        Instantiate(vfxHitTarget, hit.point, Quaternion.identity);
                     }
                     else
                     {
-                        Instantiate(vfxHitGreen, hit.point, Quaternion.identity);
+                        Instantiate(vfxHitOther, hit.point, Quaternion.identity);
                     }
                 }
             }

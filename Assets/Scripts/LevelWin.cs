@@ -17,8 +17,14 @@ public class LevelWin : MonoBehaviour
         levelWinWindow.enabled = false;
     }
 
-    public void DisplayLevelWin()
+    public void LevelPassed()
     {
+        StartCoroutine(DisplayLevelWin());
+    }
+
+    IEnumerator DisplayLevelWin()
+    {
+        yield return new WaitForSeconds(1);
         levelWinWindow.enabled = true;
         finalScore.text = "You Scored " + score.GetPlayerKills() + " kills!";
         Time.timeScale = 0;

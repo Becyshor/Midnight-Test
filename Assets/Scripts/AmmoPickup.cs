@@ -7,12 +7,26 @@ public class AmmoPickup : MonoBehaviour
     [SerializeField] private int ammoAmount = 5;
     [SerializeField] private AmmoType ammoType;
 
+    private AudioSource audioSource;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
+            audioSource.Play();
             FindObjectOfType<Ammo>().IncreaseAmmoAmount(ammoType, ammoAmount);
-            Destroy(gameObject);
+            StartCoroutine(DestroyPickup());
         }
+    }
+
+    IEnumerator DestroyPickup()
+    {
+        yield return new WaitForSeconds(0.5f);
+        Destroy(gameObject);
     }
 }

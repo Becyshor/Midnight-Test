@@ -31,7 +31,7 @@ public class Score : MonoBehaviour
         playerKills++;
         if (playerKills == levelWin.killsToWin)
         {
-            levelWin.DisplayLevelWin();
+            levelWin.LevelPassed();
         }
     }
 

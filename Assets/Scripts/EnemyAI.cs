@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class EnemyAI : MonoBehaviour
 {
     [SerializeField] private float chaseRange = 5f;
+    [SerializeField] private AudioSource zombieSound;
 
     private NavMeshAgent navMeshAgent;
     private EnemyHealth health;
@@ -33,6 +34,7 @@ public class EnemyAI : MonoBehaviour
             enabled = false;
             navMeshAgent.enabled = false;
             capsuleCollider.enabled = false;
+            StopZombieSound();
             return;
         }
 
@@ -51,6 +53,7 @@ public class EnemyAI : MonoBehaviour
     private void OnDamageTaken()
     {
         isProvoked = true;
+        PlayZombieSound();
     }
 
     private void EngageTarget()
@@ -90,5 +93,15 @@ public class EnemyAI : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, chaseRange);
+    }
+
+    private void PlayZombieSound()
+    {
+        zombieSound.Play();
+    }
+    
+    private void StopZombieSound()
+    {
+        zombieSound.Stop();
     }
 }

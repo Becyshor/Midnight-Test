@@ -1371,6 +1371,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitPoints: 100
+  healthbar: {fileID: 0}
 --- !u!114 &4948030190743810747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1384,7 +1385,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverWindow: {fileID: 0}
+  finalScore: {fileID: 0}
   ammoDisplay: {fileID: 0}
+  score: {fileID: 0}
 --- !u!114 &1762682275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2852,7 +2855,7 @@ PrefabInstance:
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4
+      value: -2.6519995
       objectReference: {fileID: 0}
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8,
         type: 3}
@@ -2991,6 +2994,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1197926206217822113, guid: adf7449dc5da5a643bd735b5bfd0432f,
         type: 3}
+      propertyPath: damage
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1197926206217822113, guid: adf7449dc5da5a643bd735b5bfd0432f,
+        type: 3}
       propertyPath: ammoSlot
       value: 
       objectReference: {fileID: 1762682275}
@@ -2999,6 +3007,18 @@ PrefabInstance:
       propertyPath: ammoType
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1197926206217822113, guid: adf7449dc5da5a643bd735b5bfd0432f,
+        type: 3}
+      propertyPath: vfxHitOther
+      value: 
+      objectReference: {fileID: 613433886817584985, guid: 6e845b0e80fad2d4c93ff505a0750129,
+        type: 3}
+    - target: {fileID: 1197926206217822113, guid: adf7449dc5da5a643bd735b5bfd0432f,
+        type: 3}
+      propertyPath: vfxHitTarget
+      value: 
+      objectReference: {fileID: 613433886817584985, guid: 48fdc004168558748b23a5a6a0a2b51e,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: adf7449dc5da5a643bd735b5bfd0432f, type: 3}
 --- !u!4 &4000009616451801 stripped
@@ -3071,9 +3091,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1647472578055726013, guid: d7e4e70f441063a4f9cee3e592616aa2,
         type: 3}
+      propertyPath: damage
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1647472578055726013, guid: d7e4e70f441063a4f9cee3e592616aa2,
+        type: 3}
       propertyPath: ammoSlot
       value: 
       objectReference: {fileID: 1762682275}
+    - target: {fileID: 1647472578055726013, guid: d7e4e70f441063a4f9cee3e592616aa2,
+        type: 3}
+      propertyPath: vfxHitOther
+      value: 
+      objectReference: {fileID: 613433886817584985, guid: 6e845b0e80fad2d4c93ff505a0750129,
+        type: 3}
+    - target: {fileID: 1647472578055726013, guid: d7e4e70f441063a4f9cee3e592616aa2,
+        type: 3}
+      propertyPath: vfxHitTarget
+      value: 
+      objectReference: {fileID: 613433886817584985, guid: 9f5fbcfb6299c2b4c912f3ff44f14463,
+        type: 3}
     - target: {fileID: 1648161427052970921, guid: d7e4e70f441063a4f9cee3e592616aa2,
         type: 3}
       propertyPath: m_Name
@@ -3159,6 +3196,18 @@ PrefabInstance:
       propertyPath: ammoType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8144823311062802800, guid: 7152c4f44b7026040b5763b707be33a9,
+        type: 3}
+      propertyPath: vfxHitOther
+      value: 
+      objectReference: {fileID: 613433886817584985, guid: 6e845b0e80fad2d4c93ff505a0750129,
+        type: 3}
+    - target: {fileID: 8144823311062802800, guid: 7152c4f44b7026040b5763b707be33a9,
+        type: 3}
+      propertyPath: vfxHitTarget
+      value: 
+      objectReference: {fileID: 613433886817584985, guid: 658b6cc087b3e9d48b8c235e4acf01cb,
+        type: 3}
     - target: {fileID: 8145802419377125685, guid: 7152c4f44b7026040b5763b707be33a9,
         type: 3}
       propertyPath: m_Name
