@@ -7,7 +7,19 @@ public class Score : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI killsText;
 
+    private string scoreKey = "Score";
     private int playerKills = 0;
+    public int CurrentScore { get; set; }
+
+    private void Awake()
+    {
+        CurrentScore = PlayerPrefs.GetInt(scoreKey);
+    }
+
+    private void Start()
+    {
+        playerKills = CurrentScore;
+    }
 
     private void Update()
     {
@@ -27,5 +39,10 @@ public class Score : MonoBehaviour
     public void IncreasePlayerKills()
     {
         playerKills++;
+    }
+
+    public void SetScore(int score)
+    {
+        PlayerPrefs.SetInt(scoreKey, score);
     }
 }

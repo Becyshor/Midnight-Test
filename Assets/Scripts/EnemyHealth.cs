@@ -38,5 +38,6 @@ public class EnemyHealth : MonoBehaviour
         isDead = true;
         GetComponent<Animator>().SetTrigger("dead");
         score.IncreasePlayerKills();
+        score.SetScore(score.GetPlayerKills());
     }
 }

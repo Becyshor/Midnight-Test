@@ -10,6 +10,7 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene(0);
         Time.timeScale = 1;
         Cursor.visible = false;
+        FindObjectOfType<Score>().SetScore(0);
     }
 
     public void QuitGame()
