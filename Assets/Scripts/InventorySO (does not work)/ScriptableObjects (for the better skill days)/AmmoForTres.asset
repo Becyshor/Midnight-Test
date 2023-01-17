@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e088a65943c41b64593d3462fefcfb48, type: 3}
+  m_Name: AmmoForTres
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 8544840246087986730, guid: a6faf237378fecb44956ae17effc909e, type: 3}
+  type: 1
+  objectName: AmmoTres
