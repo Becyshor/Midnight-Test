@@ -7,7 +7,14 @@ public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] private float hitPoints = 100f;
 
+    private Score score;
+
     private bool isDead;
+
+    private void Start()
+    {
+        score = FindObjectOfType<Score>();
+    }
 
     public bool IsDead()
     {
@@ -30,5 +37,6 @@ public class EnemyHealth : MonoBehaviour
         if (isDead) return;
         isDead = true;
         GetComponent<Animator>().SetTrigger("dead");
+        score.IncreasePlayerKills();
     }
 }

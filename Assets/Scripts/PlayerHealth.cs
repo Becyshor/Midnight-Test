@@ -17,7 +17,7 @@ public class PlayerHealth : MonoBehaviour
     {
         hitPoints -= damage;
 
-        //damageDisplay.ShowDamageDisplay();
+        damageDisplay.ShowDamageDisplay();
 
         if (hitPoints <= 0)
         {

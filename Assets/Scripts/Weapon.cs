@@ -28,14 +28,14 @@ public class Weapon : MonoBehaviour
     void Update()
     {
         DisplayAmmo();
-        if (starterAssetsInputs.shoot)
+        if (starterAssetsInputs.aim && starterAssetsInputs.shoot)
             Shoot();
     }
 
     private void DisplayAmmo()
     {
         int currentAmmo = ammoSlot.GetCurrentAmmo(ammoType);
-        ammoText.text = currentAmmo.ToString();
+        ammoText.text = "Ammo: " + currentAmmo.ToString();
     }
 
     private void Shoot()
