@@ -7,6 +7,7 @@ public class LevelWin : MonoBehaviour
 {
     [SerializeField] private Canvas levelWinWindow;
     [SerializeField] private TextMeshProUGUI finalScore;
+    private AudioSource audioSource;
     public int killsToWin;
 
     private Score score;
@@ -15,6 +16,7 @@ public class LevelWin : MonoBehaviour
     {
         score = GetComponent<Score>();
         levelWinWindow.enabled = false;
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void LevelPassed()
@@ -24,7 +26,8 @@ public class LevelWin : MonoBehaviour
 
     IEnumerator DisplayLevelWin()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
+        audioSource.Play();
         levelWinWindow.enabled = true;
         finalScore.text = "You Scored " + score.GetPlayerKills() + " kills!";
         Time.timeScale = 0;
