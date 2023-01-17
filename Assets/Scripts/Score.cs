@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Score : MonoBehaviour
 {
+    private LevelWin levelWin;
     private string scoreKey = "Score";
     private int playerKills = 0;
     public int CurrentScore { get; set; }
@@ -17,6 +18,7 @@ public class Score : MonoBehaviour
     private void Start()
     {
         playerKills = CurrentScore;
+        levelWin = GetComponent<LevelWin>();
     }
 
     public int GetPlayerKills()
@@ -27,6 +29,10 @@ public class Score : MonoBehaviour
     public void IncreasePlayerKills()
     {
         playerKills++;
+        if (playerKills == levelWin.killsToWin)
+        {
+            levelWin.DisplayLevelWin();
+        }
     }
 
     public void SetScore(int score)
